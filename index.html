@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>My App</h1>
+    <nav>
+      <button onclick="showTab('home')">Home</button>
+      <button onclick="showTab('items')">Items</button>
+      <button onclick="showTab('settings')">Settings</button>
+      <button onclick="showTab('about')">About</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="tab active">
+      <h2>Welcome</h2>
+      <p>This is the home page of the app.</p>
+    </section>
+
+    <section id="items" class="tab">
+      <h2>Items</h2>
+      <div id="itemList"></div>
+      <div class="form-card">
+        <h3>Add New Item</h3>
+        <input type="file" id="itemImage" accept="image/*" onchange="previewImage(event)"><br>
+        <input type="text" id="itemName" placeholder="Name"><br>
+        <input type="text" id="itemLocation" placeholder="Where it's kept"><br>
+        <input type="text" id="itemNote" placeholder="Note"><br>
+        <button onclick="addItem()">Add Item</button>
+      </div>
+    </section>
+
+    <section id="settings" class="tab">
+      <h2>Settings</h2>
+      <div class="settings-card">Toggle Themes - Night 🌙 / Day ☀️ <button onclick="toggleTheme()">Switch</button></div>
+      <div class="settings-card">Version: 1.0.0</div>
+    </section>
+
+    <section id="about" class="tab">
+      <h2>About</h2>
+      <p>This app was made by Lishith, a 12 year old student, who used his creativity to make this app using AI.</p>
+    </section>
+  </main>
+
+  <div id="notification"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
